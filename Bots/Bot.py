@@ -4,19 +4,21 @@ from abc import ABC, abstractmethod
 import random as r
 
 class Bot(ABC):
-
-    def __init__(nome,):
-        self.nome = nome
-        self.comandos = {}
-
-    #nao esquecer o decorator
+    
+    @abstractmethod
+    def __init__(self,nome):
+        self.__nome = nome
+        self.__comandos = {}
+    
+    @property
     def nome(self):
         pass
 
-    #nao esquecer o decorator
+    @nome.setter
     def nome(nome):
         pass
 
+    @property
     def mostra_comandos(self):
         pass
 
