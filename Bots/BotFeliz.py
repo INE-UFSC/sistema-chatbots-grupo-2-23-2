@@ -5,7 +5,7 @@ class BotFeliz(Bot):
         super().__init__(nome)
 
     @property
-    def apresentacao_feliz(self):
+    def apresentacao(self):
         return f"Oiee amigo!! Meu nome é {self.nome}! Muito prazer em conhecê-lo"
  
     @property
