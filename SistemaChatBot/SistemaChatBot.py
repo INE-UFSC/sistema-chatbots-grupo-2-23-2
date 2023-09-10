@@ -6,18 +6,21 @@ class SistemaChatBot:
         ##verificar se a lista de bots contém apenas bots
         self.__lista_bots=lista_bots
         self.__bot = None
-    
+
     def boas_vindas(self):
-        pass
-        ##mostra mensagem de boas vindas do sistema
+        print("🤖🤡🤖🤡Bem-vindo ao(by grupo 2)🤡🤖🤡🤖")
+        print()
 
     def mostra_menu(self):
-        pass
-        ##mostra o menu de escolha de bots
+        print("Bots disponiveis no momento:")
+        for i in range(len(self.__lista_bots)):
+            print(f"{i+1}, Bot: {self.__lista_bots[i].apresentaco()}")
+        print()
     
     def escolhe_bot(self):
-        pass
-        ##faz a entrada de dados do usuário e atribui o objeto ao atributo __bot 
+        indice = int(input("Digite o numero do bot desejado: "))
+        self.__bot = self.__lista_bots[indice - 1]
+        print()
 
     def mostra_comandos_bot(self):
         pass
