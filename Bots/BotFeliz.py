@@ -1,7 +1,7 @@
 from Bots.Bot import Bot
 
 class BotFeliz(Bot):
-    def __init__(self,nome):
+    def __init__(self, nome):
         super().__init__(nome)
 
     @property
