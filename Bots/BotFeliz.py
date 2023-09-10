@@ -31,11 +31,11 @@ class BotFeliz(Bot):
                 continue
 
 
-    def boas_vindas_feliz(self):
+    def boas_vindas(self):
         return "OIIIIIIIEEEEE!!! Alguém já te falou que você está lindxs hoje 😁😁!!!"
 
-    def despedida_feliz(self):
+    def despedida(self):
         return "Tchau tchau!! Nos vemos em breve !! 😁😁😁"
 
-    def motivo_feliz(self):
+    def motivo(self):
         return "Estou feliz pq fui selecionado pelo processo seletivo da BRIDGE!!! YAAAYYY"
