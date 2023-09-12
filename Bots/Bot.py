@@ -16,6 +16,7 @@ class Bot(ABC):
     def nome(self, nome):
         self._nome = nome
 
+    @abstractmethod
     def mostra_comandos(self):
         pass
     
