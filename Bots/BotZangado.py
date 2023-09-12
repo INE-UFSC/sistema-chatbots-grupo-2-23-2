@@ -27,7 +27,7 @@ class BotZangado(Bot):
     def quero_conselho(self):
         return f'{self.__nome}: Time que está ganhando não se mexe.\nVocê estava ganhando antes de vir conversar comigo.'
     
-    def por_que_zangado(self):
+    def por_que(self):
         return f'{self.__nome}: MEUS AMIGOS SÓ MARCAM O FUT AS 22H DA NOITE DESGRAÇA...\nCOMO QUE EU SAIO DE CASA AS 22H NA CHUVA?????\nCOMO????'
     
     def executa_comando(self,cmd):
