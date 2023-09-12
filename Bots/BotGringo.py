@@ -32,15 +32,15 @@ class BotGringo(Bot):
     
     def executa_comando(self,cmd):
         if cmd == 1:
-            print(self.bom_dia())
+            self.bom_dia()
         elif cmd == 2:
-            print(self.qual_seu_nome())
+            self.qual_seu_nome()
         elif cmd == 3:
-            print(self.quero_conselho())
+            self.quero_conselho()
         elif cmd == 4:
-            print(self.por_que_gringo())
+            self.por_que_gringo()
         elif cmd == 5:
-            print(self.despedida())
+            self.despedida()
 
     def boas_vindas(self):
         print(f'{self.__nome}: Welcome meu amigo! Qual é o boa de hoje? (Did i say that right ?)')

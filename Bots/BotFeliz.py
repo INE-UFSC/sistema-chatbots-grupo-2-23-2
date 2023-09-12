@@ -1,12 +1,12 @@
-from Bot import Bot
+from Bots.Bot import Bot
 
 class BotFeliz(Bot):
     def __init__(self, nome):
         super().__init__(nome)
 
-    @property
+
     def apresentacao(self):
-        return f"Oiee amigo!! Meu nome é {self.nome}! Muito prazer em conhecê-lo"
+        print(f"Oiee amigo!! Meu nome é {self.nome}! Muito prazer em conhecê-lo")
  
     @property
     def mostra_comandos(self):
@@ -15,16 +15,16 @@ class BotFeliz(Bot):
     def executa_comando(self,cmd):
         while True:
             if cmd == 1:
-                print(self.boas_vindas())
+                self.boas_vindas()
                 
             elif cmd == 2:
-                print(self.__nome)
+                self.__nome
             
             elif cmd == 3:
-                print(self.motivo_feliz())
+                self.motivo_feliz()
                 
             elif cmd == 4:
-                print(self.despedida())
+                self.despedida()
                 
             else:
                 print("Eu ainda não aprendi a responder isso! (1 a 4)")
