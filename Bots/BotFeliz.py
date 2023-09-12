@@ -15,16 +15,16 @@ class BotFeliz(Bot):
     def executa_comando(self,cmd):
         while True:
             if cmd == 1:
-                return self.boas_vindas()
+                print(self.boas_vindas())
                 
             elif cmd == 2:
-                return self.__nome
+                print(self.__nome)
             
             elif cmd == 3:
-                return self.motivo_feliz()
+                print(self.motivo_feliz())
                 
             elif cmd == 4:
-                return self.despedida()
+                print(self.despedida())
                 
             else:
                 print("Eu ainda não aprendi a responder isso! (1 a 4)")

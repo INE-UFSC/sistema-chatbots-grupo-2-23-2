@@ -32,15 +32,15 @@ class BotZangado(Bot):
     
     def executa_comando(self,cmd):
         if cmd == 1:
-            return self.bom_dia()
+            print(self.bom_dia())
         elif cmd == 2:
-            return self.qual_seu_nome()
+            print(self.qual_seu_nome())
         elif cmd == 3:
-            return self.quero_conselho()
+            print(self.quero_conselho())
         elif cmd == 4:
-            return self.por_que_zangado()
+            print(self.por_que_zangado())
         elif cmd == 5:
-            return self.despedida()
+            print(self.despedida())
 
     def boas_vindas(self):
         return f'{self.__nome}: boas vindas é o CACETE. to muito PISTOLA. POR QUE VOCÊ VEM FALAR COMIGO??'
