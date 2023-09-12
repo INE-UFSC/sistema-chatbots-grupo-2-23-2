@@ -41,7 +41,7 @@ class BotZangado(Bot):
             print(self.por_que_zangado())
         elif cmd == 5:
             print(self.despedida())
-
+    
     def boas_vindas(self):
         return f'{self.__nome}: boas vindas é o CACETE. to muito PISTOLA. POR QUE VOCÊ VEM FALAR COMIGO??'
 

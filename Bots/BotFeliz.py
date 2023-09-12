@@ -15,17 +15,17 @@ class BotFeliz(Bot):
     def executa_comando(self,cmd):
         while True:
             if cmd == 1:
-                self.boas_vindas()
-                break
+                return self.boas_vindas()
+                
             elif cmd == 2:
-                self.nome
-                break
+                return self.__nome
+            
             elif cmd == 3:
-                self.motivo_feliz
-                break
+                return self.motivo_feliz()
+                
             elif cmd == 4:
-                self.despedida_feliz
-                break
+                return self.despedida()
+                
             else:
                 print("Eu ainda não aprendi a responder isso! (1 a 4)")
                 continue
@@ -37,5 +37,5 @@ class BotFeliz(Bot):
     def despedida(self):
         return "Tchau tchau!! Nos vemos em breve !! 😁😁😁"
 
-    def motivo(self):
+    def motivo_feliz(self):
         return "Estou feliz pq fui selecionado pelo processo seletivo da BRIDGE!!! YAAAYYY"
