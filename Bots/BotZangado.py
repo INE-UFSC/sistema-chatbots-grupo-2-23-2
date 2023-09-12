@@ -1,4 +1,4 @@
-from Bots.Bot import Bot
+from Bot import Bot
 
 class BotZangado(Bot):
     def __init__(self,nome):
@@ -13,22 +13,22 @@ class BotZangado(Bot):
         self.__nome = nome
 
     def apresentacao(self):
-        return f'{self.__nome}: Eu sou o {self.__nome}. Por favor... Vá embora... E nao me estresse.'
+        print(f'{self.__nome}: Eu sou o {self.__nome}. Por favor... Vá embora... E nao me estresse.')
  
     def mostra_comandos(self):
-        return '1. Bom dia\n2. Qual o seu nome?\n3. Quero um conselho.\n4. Por que você é zangado?\n5.Adeus.'
+        print('1. Bom dia\n2. Qual o seu nome?\n3. Quero um conselho.\n4. Por que você é zangado?\n5.Adeus.')
     
     def bom_dia(self):
-        return f'{self.__nome}: Bom dia pra QUEM? QUEM TA TENDO UM BOM DIA?\nQueria estar aqui nao po.'
+        print(f'{self.__nome}: Bom dia pra QUEM? QUEM TA TENDO UM BOM DIA?\nQueria estar aqui nao po.')
     
     def qual_seu_nome(self):
-        return f'{self.__nome}:Meu nome é {self.__nome}, também conhecido como PutassoBot.\nTambém conhecido como quem não queria falar com você'
+        print(f'{self.__nome}:Meu nome é {self.__nome}, também conhecido como PutassoBot.\nTambém conhecido como quem não queria falar com você')
     
     def quero_conselho(self):
-        return f'{self.__nome}: Time que está ganhando não se mexe.\nVocê estava ganhando antes de vir conversar comigo.'
+        print(f'{self.__nome}: Time que está ganhando não se mexe.\nVocê estava ganhando antes de vir conversar comigo.')
     
     def por_que(self):
-        return f'{self.__nome}: MEUS AMIGOS SÓ MARCAM O FUT AS 22H DA NOITE DESGRAÇA...\nCOMO QUE EU SAIO DE CASA AS 22H NA CHUVA?????\nCOMO????'
+        print(f'{self.__nome}: MEUS AMIGOS SÓ MARCAM O FUT AS 22H DA NOITE DESGRAÇA...\nCOMO QUE EU SAIO DE CASA AS 22H NA CHUVA?????\nCOMO????')
     
     def executa_comando(self,cmd):
         if cmd == 1:

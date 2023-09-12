@@ -1,4 +1,4 @@
-from Bots.Bot import Bot
+from Bot import Bot
 
 class BotFeliz(Bot):
     def __init__(self, nome):
@@ -32,10 +32,10 @@ class BotFeliz(Bot):
 
 
     def boas_vindas(self):
-        return "OIIIIIIIEEEEE!!! Alguém já te falou que você está lindxs hoje 😁😁!!!"
+         print("OIIIIIIIEEEEE!!! Alguém já te falou que você está lindxs hoje 😁😁!!!")
 
     def despedida(self):
-        return "Tchau tchau!! Nos vemos em breve !! 😁😁😁"
+        print("Tchau tchau!! Nos vemos em breve !! 😁😁😁")
 
     def motivo_feliz(self):
-        return "Estou feliz pq fui selecionado pelo processo seletivo da BRIDGE!!! YAAAYYY"
+        print("Estou feliz pq fui selecionado pelo processo seletivo da BRIDGE!!! YAAAYYY")

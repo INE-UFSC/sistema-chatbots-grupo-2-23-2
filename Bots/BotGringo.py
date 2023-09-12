@@ -13,22 +13,22 @@ class BotGringo(Bot):
         self.__nome = nome
 
     def apresentacao(self):
-        return f'{self.__nome}: Hello! My nome is {self.__nome}. Im from America aka USA!!'
+         print(f'{self.__nome}: Hello! My nome is {self.__nome}. Im from America aka USA!!')
  
     def mostra_comandos(self):
-        return '1. Bom dia\n2. Qual o seu nome?\n3. Quero um conselho.\n4. Por que você veio ao Brasil?\n5.Adeus.'
+        print('1. Bom dia\n2. Qual o seu nome?\n3. Quero um conselho.\n4. Por que você veio ao Brasil?\n5.Adeus.')
     
     def bom_dia(self):
-        return f'{self.__nome}: Bom dia for you too minha amigo! Lets buy coisas real is really barato'
+        print(f'{self.__nome}: Bom dia for you too minha amigo! Lets buy coisas real is really barato')
     
     def qual_seu_nome(self):
-        return f'{self.__nome}:My nome is {self.__nome}, and Im still aprendendo a sua língua. Spanish is really hard! '
+        print(f'{self.__nome}:My nome is {self.__nome}, and Im still aprendendo a sua língua. Spanish is really hard! ')
     
     def quero_conselho(self):
-        return f'{self.__nome}: Continuar morando em Brasil my friend!! Aqui is really good para viver you know, you have caipirinha, samba e futebol every day!'
+        print(f'{self.__nome}: Continuar morando em Brasil my friend!! Aqui is really good para viver you know, you have caipirinha, samba e futebol every day!')
     
     def por_que_gringo(self):
-        return f'{self.__nome}: Eu vim para Brasil to visit the praias of Rio de Janeiro, like Copacabana and Lebron! Brasil has the most bonita capital of the mundo!'
+        print(f'{self.__nome}: Eu vim para Brasil to visit the praias of Rio de Janeiro, like Copacabana and Lebron! Brasil has the most bonita capital of the mundo!')
     
     def executa_comando(self,cmd):
         if cmd == 1:
@@ -43,7 +43,7 @@ class BotGringo(Bot):
             print(self.despedida())
 
     def boas_vindas(self):
-        return f'{self.__nome}: Welcome meu amigo! Qual é o boa de hoje? (Did i say that right ?)'
+        print(f'{self.__nome}: Welcome meu amigo! Qual é o boa de hoje? (Did i say that right ?)')
 
     def despedida(self):
-        return f'Bye bye my friend! Eu estar indo embora too! Im going to the praia right now, see ya later!'
+        print(f'Bye bye my friend! Eu estar indo embora too! Im going to the praia right now, see ya later!')
