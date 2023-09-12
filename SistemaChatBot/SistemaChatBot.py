@@ -6,7 +6,7 @@ class SistemaChatBot:
         for bot in lista_bots:
             if not isinstance(bot, Bot):
                 raise ValueError("A lista deve conter apenas Bots.")
-        self.__lista_bots = lista_bot
+        self.__lista_bots = lista_bots
         self.__bot = None
 
     def boas_vindas(self):
