@@ -2,15 +2,8 @@ from Bots.Bot import Bot
 
 class BotTriste(Bot):
     def __init__(self,nome):
-        self.__nome = nome
-
-    @property
-    def nome(self):
-        return self.__nome
-
-    @nome.setter
-    def nome(self, nome):
-        self.__nome = nome
+        super().__init__(nome)
+        self.__comandos = {}
 
     def apresentacao(self):
          print(f'{self.__nome}: Eu sou o {self.__nome}. Por favor, não se incomode com a minha tristeza\nNão se incomode comigo na verdade.\nEu estou bem :c')
@@ -29,7 +22,13 @@ class BotTriste(Bot):
     
     def por_que_triste(self):
         print(f'{self.__nome}: Zerei a prova de calculo ontem, a morena me deixou semana passada e eu pisei num lego hoje de manhã... \nPior dia da minha vida')
-    
+
+    def boas_vindas(self):
+        print(f'{self.__nome}: Boas vindas! \nVocê quer ser meu amigo? \nEu não tenho nenhum amigo por enquanto :c')
+
+    def despedida(self):
+        print('{self.__nome}: Não... não me deixe aqui... Eu achei que você era meu amigo...')
+        
     def executa_comando(self,cmd):
         if cmd == 1:
             self.bom_dia()
@@ -41,10 +40,3 @@ class BotTriste(Bot):
             self.por_que_triste()
         elif cmd == 5:
             self.despedida()
-
-
-    def boas_vindas(self):
-        print(f'{self.__nome}: Boas vindas! \nVocê quer ser meu amigo? \nEu não tenho nenhum amigo por enquanto :c')
-
-    def despedida(self):
-        print('{self.__nome}: Não... não me deixe aqui... Eu achei que você era meu amigo...')

@@ -2,15 +2,8 @@ from Bots.Bot import Bot
 
 class BotZangado(Bot):
     def __init__(self,nome):
-        self.__nome = nome
-
-    @property
-    def nome(self):
-        return self.__nome
-
-    @nome.setter
-    def nome(self, nome):
-        self.__nome = nome
+        super().__init__(nome)
+        self.__comandos = {}
 
     def apresentacao(self):
         print(f'{self.__nome}: Eu sou o {self.__nome}. Por favor... Vá embora... E nao me estresse.')
@@ -30,6 +23,12 @@ class BotZangado(Bot):
     def por_que(self):
         print(f'{self.__nome}: MEUS AMIGOS SÓ MARCAM O FUT AS 22H DA NOITE DESGRAÇA...\nCOMO QUE EU SAIO DE CASA AS 22H NA CHUVA?????\nCOMO????')
     
+    def boas_vindas(self):
+        return f'{self.__nome}: boas vindas é o CACETE. to muito PISTOLA. POR QUE VOCÊ VEM FALAR COMIGO??'
+
+    def despedida(self):
+        return f'Finalmente. Vai embora logo... Demorou demais já. TA OLHANDO O QUE AINDA VEI? VAI EMBORA.'
+    
     def executa_comando(self,cmd):
         if cmd == 1:
             self.bom_dia()
@@ -41,9 +40,3 @@ class BotZangado(Bot):
             self.por_que()
         elif cmd == 5:
             self.despedida()
-
-    def boas_vindas(self):
-        return f'{self.__nome}: boas vindas é o CACETE. to muito PISTOLA. POR QUE VOCÊ VEM FALAR COMIGO??'
-
-    def despedida(self):
-        return f'Finalmente. Vai embora logo... Demorou demais já. TA OLHANDO O QUE AINDA VEI? VAI EMBORA.'

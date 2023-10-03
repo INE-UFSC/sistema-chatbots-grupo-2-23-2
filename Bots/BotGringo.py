@@ -2,15 +2,8 @@ from Bots.Bot import Bot
 
 class BotGringo(Bot):
     def __init__(self,nome):
-        self.__nome = nome
-
-    @property
-    def nome(self):
-        return self.__nome
-
-    @nome.setter
-    def nome(self, nome):
-        self.__nome = nome
+        super().__init__(nome)
+        self.__comandos = {}
 
     def apresentacao(self):
          print(f'{self.__nome}: Hello! My nome is {self.__nome}. Im from America aka USA!!')
@@ -30,6 +23,12 @@ class BotGringo(Bot):
     def por_que_gringo(self):
         print(f'{self.__nome}: Eu vim para Brasil to visit the praias of Rio de Janeiro, like Copacabana and Lebron! Brasil has the most bonita capital of the mundo!')
     
+    def boas_vindas(self):
+        print(f'{self.__nome}: Welcome meu amigo! Qual é o boa de hoje? (Did i say that right ?)')
+
+    def despedida(self):
+        print(f'Bye bye my friend! Eu estar indo embora too! Im going to the praia right now, see ya later!')
+        
     def executa_comando(self,cmd):
         if cmd == 1:
             self.bom_dia()
@@ -41,9 +40,3 @@ class BotGringo(Bot):
             self.por_que_gringo()
         elif cmd == 5:
             self.despedida()
-
-    def boas_vindas(self):
-        print(f'{self.__nome}: Welcome meu amigo! Qual é o boa de hoje? (Did i say that right ?)')
-
-    def despedida(self):
-        print(f'Bye bye my friend! Eu estar indo embora too! Im going to the praia right now, see ya later!')
