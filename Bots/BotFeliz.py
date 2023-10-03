@@ -1,9 +1,9 @@
 from Bots.Bot import Bot
+from Bots.comando import Comando
 
 class BotFeliz(Bot):
     def __init__(self, nome):
         super().__init__(nome)
-        self.__comandos = {}
         
     def mostra_comandos(self):
         pass

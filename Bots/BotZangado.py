@@ -1,9 +1,9 @@
 from Bots.Bot import Bot
+from Bots.comando import Comando
 
 class BotZangado(Bot):
-    def __init__(self,nome):
+    def __init__(self, nome):
         super().__init__(nome)
-        self.__comandos = {}
 
     def apresentacao(self):
         print(f'{self.__nome}: Eu sou o {self.__nome}. Por favor... Vá embora... E nao me estresse.')

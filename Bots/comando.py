@@ -12,7 +12,7 @@ class Comando:
 
     @property
     def mensagem(self):
-        return self.__mensagem
+        return self.__msg
 
     def getRandomResposta(self):
         return random.choice(self.__respostas)

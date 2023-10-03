@@ -1,12 +1,12 @@
 ##implemente as seguintes classes
-
+from Bots.comando import Comando
 from abc import ABC, abstractmethod
 import random as r
 
 class Bot(ABC):
     def __init__(self, nome):
         self._nome = nome
-        self._comandos = {}
+        self._comandos = []
 
     @property
     def nome(self):
@@ -16,13 +16,16 @@ class Bot(ABC):
     def nome(self, nome):
         self._nome = nome
 
-    @abstractmethod
     def mostra_comandos(self):
-        pass
+        string = f''
+        for comando in self._comandos:
+            string += f'Comando: {comando.id()} = {comando.msg()}\n'
+        return string
     
-    @abstractmethod
     def executa_comando(self,cmd):
-        pass
+        for comando in self._comandos:
+            if cmd == comando.id() or cmd == comando.msg():
+                return comando.getRandomResposta()
 
     @abstractmethod
     def boas_vindas(self):
