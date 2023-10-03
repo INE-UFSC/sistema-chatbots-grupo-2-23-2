@@ -8,6 +8,6 @@ from Bots.BotGringo import BotGringo
 ###construa a lista de bots disponíveis aqui
 lista_bots = [BotZangado("Yoda"), BotTriste("Bolado"), BotFeliz("Smiley"), BotGringo("Kevin")]
 
-print("FALAROBOT™️")
-sys = scb.SistemaChatBot("FALAROBOT™️",lista_bots)
-sys.inicio()
+
+sys = scb.SistemaChatBot('botsDAO.pkl')
+sys.inicia()
