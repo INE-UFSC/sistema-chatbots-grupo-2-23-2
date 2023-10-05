@@ -1,5 +1,5 @@
 #encoding: utf-8
-from SistemaChatBot import SistemaChatBot as scb
+from SistemaChatBot.SistemaChatBot import SistemaChatBot as scb
 from Bots.BotZangado import BotZangado
 from Bots.BotTriste import BotTriste
 from Bots.BotFeliz import BotFeliz
@@ -9,5 +9,5 @@ from Bots.BotGringo import BotGringo
 lista_bots = [BotZangado("Yoda"), BotTriste("Bolado"), BotFeliz("Smiley"), BotGringo("Kevin")]
 
 
-sys = scb.SistemaChatBot('botsDAO.pkl')
+sys = scb('botsDAO.pkl', lista_bots)
 sys.inicia()

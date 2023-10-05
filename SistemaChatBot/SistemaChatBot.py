@@ -5,9 +5,10 @@ from SistemaChatBot.ViewChatBot import ViewChatBot
 
 
 class SistemaChatBot():
-    def __init__(self, archive):
+    def __init__(self, archive, listaBots):
         self.__telaBots = ViewChatBot(self)
         self.__botsDAO = BotDAO(f'{archive}')
+        self.__listaBots = listaBots
         
 
     @property
@@ -17,6 +18,10 @@ class SistemaChatBot():
     @property
     def botsDAO(self):
         return self.__botsDAO
+    
+    @property
+    def listaBots(self):
+        return self.__listaBots
 
     def boas_vindas(self):
         pass
@@ -36,7 +41,7 @@ class SistemaChatBot():
         indice = int(input("Digite o numero do bot desejado: "))
         if indice == -1:
             return False
-        self.__bot = self.__lista_bots[indice - 1]
+        self.__botsDAO = self.__lista_bots[indice - 1]
         print()
         return True
         
@@ -68,6 +73,7 @@ class SistemaChatBot():
         while rodando:
             event, values = self.__telaBots.le_eventos()
             if event == sg.WIN_CLOSED:
+                self.__telaBots.mostra_listaBots(self.listaBots)
                 rodando = False
                 self.telaBots.fim()
                 break
