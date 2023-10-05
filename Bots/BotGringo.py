@@ -10,7 +10,7 @@ class BotGringo(Bot):
                             ]
         
     def apresentacao(self):
-        return f': Hello! My nome is {self.__nome()}. Im from America aka USA!!'
+        return f'Hello! My nome is {self.__nome()}. Im from America aka USA!!'
  
     def boas_vindas(self):
         return f'Welcome meu amigo! Qual é o boa de hoje? (Did i say that right ?)'

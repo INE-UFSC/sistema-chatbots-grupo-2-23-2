@@ -47,4 +47,8 @@ class DAO(ABC):
             pass
 
     def get_all(self):
+<<<<<<< HEAD
         return self.cache.values()
+=======
+        return self.cache.values()
+>>>>>>> efbade43a631ccd88b3a79ec5e0bb6b727a4e719
