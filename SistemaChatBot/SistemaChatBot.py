@@ -6,10 +6,10 @@ from SistemaChatBot.ViewChatBot import ViewChatBot
 
 class SistemaChatBot():
     def __init__(self, archive, listaBots):
-        self.__telaBots = ViewChatBot(self)
-        self.__botsDAO = BotDAO(f'{archive}')
         self.__listaBots = listaBots
-        
+        self.__telaBots = ViewChatBot(self, listaBots)
+        self.__botsDAO = BotDAO(f'{archive}')
+
 
     @property
     def telaBots(self):
@@ -37,13 +37,13 @@ class SistemaChatBot():
         #     for i in len(self.botsDAO.comandos):
         #         comando = Comando().getAttr(msg) = "Qual seu nome ?"
     
-    def escolhe_bot(self):
-        indice = int(input("Digite o numero do bot desejado: "))
-        if indice == -1:
-            return False
-        self.__botsDAO = self.__lista_bots[indice - 1]
-        print()
-        return True
+    # def escolhe_bot(self):
+    #     indice = int(input("Digite o numero do bot desejado: "))
+    #     if indice == -1:
+    #         return False
+    #     self.__botsDAO = self.__lista_bots[indice - 1]
+    #     print()
+    #     return True
         
     def mostra_comandos_bot(self):
         self.__botsDAO.mostra_comandos()
@@ -69,18 +69,24 @@ class SistemaChatBot():
         # Loop de eventos
         self.boas_vindas()
         rodando = True
-        resultado = ''
         while rodando:
             event, values = self.__telaBots.le_eventos()
             if event == sg.WIN_CLOSED:
-                self.__telaBots.mostra_listaBots(self.listaBots)
                 rodando = False
                 self.telaBots.fim()
                 break
 
-            elif event == 'Comando 1':
+            elif event == 'listaBots':
                 try:
+                    self.__telaBots.mostra_selBot(values['listaBots'][0])
+                    
+                except:
                     pass
+                
+            elif event == 'listaPerguntas':
+                try:
+                    self.__telaBots.mostra_selBot(str(values['ListaPerguntas']))
+                    
                 except:
                     pass
 
