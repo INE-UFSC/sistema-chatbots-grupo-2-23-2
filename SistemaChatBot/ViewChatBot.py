@@ -44,22 +44,35 @@ class ViewChatBot():
 
         return sg.Window("Chat Bots", self.__container, font=("Helvetica", 14))
 
+
+
     def tela_bots(self, mensagens):
 
         linha0 = [sg.Text("Conversa com o Bot")]
         linha1 = [sg.Text("Lista de perguntas: ")]
         linha2 = [sg.Listbox(mensagens, size=(20, 4), font=('Arial Bold', 14), expand_y=True, enable_events=True, key='ListaPerguntas', ), sg.Button('Perguntar', key='Perguntar')]
-        linha3 = [sg.Text("Resposta do Bot: "), sg.Text(key = "RespBot"), sg.Button(key = "Conversar")]
+        linha3 = [sg.Text("Resposta do Bot: "), sg.Text(key = "RespBot")]
         self.__container = [linha0, linha1, linha2, linha3]
 
-        return sg.Window("", self.__container, font=("Helvetica", 14))
+        janela =  sg.Window("", self.__container, font=("Helvetica", 14))
+        
+        
+        rodando = True
+        while rodando:
+            event, values = janela.read()
+            if event == sg.WIN_CLOSED:
+                rodando = False
+                break
+                
+            elif event == 'listaPerguntas':
+                try:
+                    janela.Element('RespBot').Update(str(values['ListaPerguntas']))
+                except:
+                    pass
+
 
     def mostra_selBot(self, selBot):
         self.__window.Element('selBot').Update(selBot)
-        
-    def mostra_respBot(self, RespBot):
-        self.__window.Element('RespBot').Update(RespBot)
-
     ##^^fazer funcao geral que atualiza qualquer elemento da tela, passando ele como parametro
 
 

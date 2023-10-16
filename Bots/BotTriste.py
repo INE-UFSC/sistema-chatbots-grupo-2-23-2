@@ -4,7 +4,7 @@ from Bots.comando import Comando
 class BotTriste(Bot):
     def __init__(self,nome):
         super().__init__(nome)
-        self._comandos = [Comando(1, 'Bom dia','É, até que o dia está sendo bom... Só tenho 10 listas de cálculo pra fazer...Nem chorei hoje ainda...')
+        self.__comandos = [Comando(1, 'Bom dia','É, até que o dia está sendo bom... Só tenho 10 listas de cálculo pra fazer...Nem chorei hoje ainda...')
                            ,Comando(2, 'Quero conselho','Se um dia você quiser marcar um fut com os amigos, marque antes das 22h...Num dia que não está chovendo também... ')
                            ,Comando(3, 'Por que triste?','Zerei a prova de calculo ontem, a morena me deixou semana passada e eu pisei num lego hoje de manhã... Pior dia da minha vida')
                            ]

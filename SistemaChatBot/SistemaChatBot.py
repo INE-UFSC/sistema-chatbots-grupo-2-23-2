@@ -33,17 +33,6 @@ class SistemaChatBot():
             
         print()
 
-        # try:
-        #     for i in len(self.botsDAO.comandos):
-        #         comando = Comando().getAttr(msg) = "Qual seu nome ?"
-    
-    # def escolhe_bot(self):
-    #     indice = int(input("Digite o numero do bot desejado: "))
-    #     if indice == -1:
-    #         return False
-    #     self.__botsDAO = self.__lista_bots[indice - 1]
-    #     print()
-    #     return True
         
     def mostra_comandos_bot(self):
         self.__botsDAO.mostra_comandos()
@@ -79,16 +68,25 @@ class SistemaChatBot():
             elif event == 'listaBots':
                 try:
                     self.__telaBots.mostra_selBot(values['listaBots'][0])
+                    x = self.buscaBot(values['listaBots'][0]).comandos
+                    self.telaBots.tela_bots(x)
                     
-                except:
-                    pass
+                except Exception as e:
+                    print('erro:',e)
                 
-            elif event == 'listaPerguntas':
-                try:
-                    self.__telaBots.mostra_selBot(str(values['ListaPerguntas']))
-                    
-                except:
-                    pass
+    def buscaBot(self, nome):
+        for bot in self.listaBots:
+            print(bot)
+            if bot.nome == nome:
+                return bot
+            else:
+                return None
+
+
+
+
+
+
 
             # elif event == 'Consultar':
             #     if (values["nome"] == "") and (values["codigo"] == ""):
