@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-from sistemaChatBot.SistemaChatBot import SistemaChatBot
+from SistemaChatBot.SistemaChatBot import SistemaChatBot
 from views.MenuView import MenuView
 from views.BotView import BotView
 
