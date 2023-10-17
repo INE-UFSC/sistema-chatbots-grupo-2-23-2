@@ -10,6 +10,9 @@ class SistemaChatBot():
         self.__telaBots = ViewChatBot(self, listaBots)
         self.__botsDAO = BotDAO(f'{archive}')
 
+    @property
+    def listaBots(self):
+        return self.__listaBots
 
     @property
     def telaBots(self):
@@ -18,10 +21,6 @@ class SistemaChatBot():
     @property
     def botsDAO(self):
         return self.__botsDAO
-    
-    @property
-    def listaBots(self):
-        return self.__listaBots
 
     def boas_vindas(self):
         pass
@@ -54,18 +53,8 @@ class SistemaChatBot():
             if cmd == -1:
                 break
             self.__botsDAO.executa_comando(cmd)
-            
-    def inicio(self):
-        self.boas_vindas()
-        while True:
-            self.mostra_menu()
-            if not self.escolhe_bot():
-                break  
-            self.mostra_comandos_bot()
-            self.le_envia_comando()
-            ##ao sair mostrar a mensagem de despedida do bot
 
-    def inicia(self):
+    def inicio(self):
         # Loop de eventos
         self.boas_vindas()
         rodando = True
