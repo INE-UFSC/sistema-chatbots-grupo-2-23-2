@@ -76,7 +76,7 @@ class Controle:
             elif event == "Enviar":
                 if values["pergunta"] == '':
                     sg.PopupError(
-                        f"Por favor, escolha uma pergunta!", title=f"Erro!")
+                        f"Por favor, escolha uma pergunta.", title=f"Erro!")
 
                 else:
                     self.tela.window['resposta'].update(
