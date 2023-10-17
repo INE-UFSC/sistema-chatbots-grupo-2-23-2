@@ -1,25 +1,20 @@
-import random
-
 class Comando:
-    def __init__(self, id, msg, respostas = []):
-        self.__id = id
-        self.__msg = msg
-        self.__respostas = respostas
-        
-    @property
-    def id(self):
-        return self.__id
+    def __init__(self, pergunta, resposta):
+        self.__pergunta = pergunta
+        self.__resposta = resposta
 
-    @property
-    def mensagem(self):
-        return self.__msg
-
-    def getRandomResposta(self):
-        return random.choice(self.__respostas)
+    @property 
+    def pergunta(self):
+        return self.__pergunta
     
-    def addResposta(self, resposta):
-        self.__respostas.append(resposta)
+    @pergunta.setter
+    def pergunta(self, pergunta):
+        self.__pergunta = pergunta
 
-    def delResposta(self, resposta):
-        if resposta in self.__respostas:
-            del self.__respostas[resposta]
+    @property
+    def resposta(self):
+        return self.__resposta
+    
+    @resposta.setter
+    def resposta(self, resposta):
+        self.__resposta = resposta

@@ -1,13 +1,16 @@
-from Bots.Bot import Bot
-from Bots.comando import Comando
+from bots.Bot import Bot
+from bots.comando import Comando
 
 class BotZangado(Bot):
     def __init__(self, nome):
         super().__init__(nome)
-        self._comandos = [Comando(1,'Bom dia','Bom dia pra QUEM? QUEM TA TENDO UM BOM DIA?\nQueria estar aqui nao po.')
-                          ,Comando(2,'Quero conselho','Time que está ganhando não se mexe. Você estava ganhando antes de vir conversar comigo.')
-                          ,Comando(3,'Por que zangado?','MEUS AMIGOS SÓ MARCAM O FUT AS 22H DA NOITE DESGRAÇA...COMO QUE EU SAIO DE CASA AS 22H NA CHUVA?????COMO????')
-                          ]
+        self.__comandos = [ Comando('Bom dia','Bom dia pra QUEM? QUEM TA TENDO UM BOM DIA?\nQueria estar aqui nao po.'),
+                           Comando('Quero conselho','Time que está ganhando não se mexe. Você estava ganhando antes de vir conversar comigo.'),
+                           Comando('Por que zangado?','MEUS AMIGOS SÓ MARCAM O FUT AS 22H DA NOITE DESGRAÇA...COMO QUE EU SAIO DE CASA AS 22H NA CHUVA?????COMO????')
+                         ]
+    @property
+    def comandos(self):
+        return self.__comandos
 
     def apresentacao(self):
         print(f'{self.__nome}: Eu sou o {self.__nome}. Por favor... Vá embora... E nao me estresse.')

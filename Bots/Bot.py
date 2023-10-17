@@ -1,12 +1,12 @@
 ##implemente as seguintes classes
-from Bots.comando import Comando
+from bots.comando import Comando
 from abc import ABC, abstractmethod
 import random as r
 
 class Bot(ABC):
     def __init__(self, nome):
         self.__nome = nome
-        self.__comandos = []
+        self.__comandos = ["abc"]
 
     @property
     def nome(self):
@@ -15,11 +15,18 @@ class Bot(ABC):
     @nome.setter
     def nome(self, nome):
         self.__nome = nome
-
-    @property
-    def comandos(self):
-        return self.__comandos
     
+    def get_perguntas(self):
+        perguntas = []
+        for comando in self.comandos:
+            perguntas.append(comando.pergunta)
+        return perguntas
+    
+    def get_resposta(self, pergunta):
+        for comando in self.comandos:
+            if comando.pergunta == pergunta:
+                return comando.resposta
+        
     def mostra_comandos(self):
         string = f''
         for comando in self.__comandos:

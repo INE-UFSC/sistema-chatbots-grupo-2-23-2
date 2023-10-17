@@ -1,5 +1,5 @@
-from Bots.DAO import DAO
-from Bots.Bot import Bot
+from bots.DAO import DAO
+from bots.Bot import Bot
 
 
 class BotDAO(DAO):
