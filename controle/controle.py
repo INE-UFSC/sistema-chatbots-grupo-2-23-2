@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
-from SistemaChatBot.SistemaChatBot import SistemaChatBot
-from view.MenuView import MenuView
-from view.BotView import BotView
+from sistemaChatBot.SistemaChatBot import SistemaChatBot
+from views.MenuView import MenuView
+from views.BotView import BotView
 
 
 class Controle:
