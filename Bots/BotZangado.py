@@ -18,10 +18,10 @@ class BotZangado(Bot):
 
     def apresentacao(self):
         print(
-            f'{self.__nome}: Eu sou o {self.__nome}. Por favor... Vá embora... E nao me estresse.')
+            f'{self.nome}: Eu sou o {self.nome}. Por favor... Vá embora... E nao me estresse.')
 
     def boas_vindas(self):
-        return f'{self.__nome}: boas vindas é o CACETE. to muito PISTOLA. POR QUE VOCÊ VEM FALAR COMIGO??'
+        return f'{self.nome}: boas vindas é o CACETE. to muito PISTOLA. POR QUE VOCÊ VEM FALAR COMIGO??'
 
     def despedida(self):
         return f'Finalmente. Vai embora logo... Demorou demais já. TA OLHANDO O QUE AINDA VEI? VAI EMBORA.'

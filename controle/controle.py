@@ -55,9 +55,13 @@ class Controle:
                     self.interface_bot(bot_escolhido)
                 else:
                     self.tela.mostra_selBot("Nenhum bot selecionado")
+                    sg.PopupError(
+                        f"Selecione algum bot.", title=f"Erro",font=('Arial', 14))
 
     # conversa com o bot
     def interface_bot(self, bot):
+        sg.popup(f"{bot.boas_vindas()}",title="Boas Vindas",font=('Arial', 14))
+
         self.tela = BotView(self, bot)
 
         # loop de eventos
@@ -71,13 +75,13 @@ class Controle:
 
             elif event == 'Voltar':
                 self.tela.fim()
+                sg.popup(f"{bot.despedida()}",title="Despedida",font=('Arial', 14))
                 self.interface_menu()
 
             elif event == "Enviar":
                 if values["pergunta"] == '':
                     sg.PopupError(
-                        f"Escolha alguma pergunta.", title=f"Erro!")
+                        f"Escolha alguma pergunta.", title=f"Erro",font=('Arial', 14))
 
                 else:
-                    self.tela.window['resposta'].update(
-                        bot.get_resposta(values["pergunta"]))
+                    self.tela.window['resposta'].update(bot.get_resposta(values["pergunta"]))

@@ -42,7 +42,7 @@ class BotView:
                       key="pergunta"), sg.Button('Enviar', size=(10, 1))]
         ]
 
-        return sg.Window(f"Conversa com {self.bot.nome}", self.__container, font=("Helvetica", 16))
+        return sg.Window(f"Conversa com {self.bot.nome}", self.__container, font=('Arial', 14))
 
     def le_eventos(self):
         return self.window.read()

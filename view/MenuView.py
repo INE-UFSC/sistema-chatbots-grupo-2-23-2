@@ -41,7 +41,7 @@ class MenuView:
             [sg.Button('Conversar')]
         ]
 
-        return sg.Window("Menu", self.__container, font=("Helvetica", 16))
+        return sg.Window("Menu", self.__container, font=('Arial', 14))
 
     def getListaBotsNome(self):
         nomes = []
