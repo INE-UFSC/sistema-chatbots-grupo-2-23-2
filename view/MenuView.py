@@ -1,5 +1,6 @@
-import PySimpleGUI as sg 
+import PySimpleGUI as sg
 from bots.Bot import Bot
+
 
 class MenuView:
     def __init__(self, controlador):
@@ -8,30 +9,35 @@ class MenuView:
         self.__bots = self.controlador.scb.bots
         self.__window = self.tela_menu()
 
-    ## getters e setters
+    # getters e setters
     @property
     def controlador(self):
         return self.__controlador
+
     @property
     def container(self):
         return self.__container
+
     @container.setter
     def container(self, container):
         self.__container = container
-    @property 
+
+    @property
     def bots(self):
         return self.__bots
+
     @property
     def window(self):
         return self.__window
 
-    ## metodos
+    # metodos
     def tela_menu(self):
 
         self.__container = [
             [sg.Text("Bem vindo(a) ao Chat Bots")],
-            [sg.Text("Selecione com qual bot deseja conversar: "), sg.Listbox(self.getListaBotsNome(), size = (20, 4), font=('Arial Bold', 14), expand_y=True, enable_events=True, key='listaBots')],
-            [sg.Text("Bot selecionado: "), sg.Text(key = "selBot")],
+            [sg.Text("Selecione com qual bot deseja conversar: "), sg.Listbox(self.getListaBotsNome(), size=(
+                20, 4), font=('Arial Bold', 14), expand_y=True, enable_events=True, key='listaBots')],
+            [sg.Text("Bot selecionado: "), sg.Text(key="selBot")],
             [sg.Button('Conversar')]
         ]
 

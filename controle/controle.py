@@ -4,31 +4,34 @@ from SistemaChatBot.SistemaChatBot import SistemaChatBot
 from view.MenuView import MenuView
 from view.BotView import BotView
 
+
 class Controle:
     def __init__(self, bots):
         self.__scb = SistemaChatBot(bots, 'bots.pkl')
         self.__tela = None
-    
-    ## getters e setters
+
+    # getters e setters
     @property
     def scb(self):
         return self.__scb
+
     @property
     def tela(self):
-        return self.__tela 
+        return self.__tela
+
     @tela.setter
     def tela(self, tela):
         self.__tela = tela
 
-    ## metodos
+    # metodos
     def inicio(self):
         self.interface_menu()
 
-    ##menu
+    # menu
     def interface_menu(self):
         self.__tela = MenuView(self)
 
-        ## loop de eventos
+        # loop de eventos
         rodando = True
         while rodando:
             event, values = self.tela.le_eventos()
@@ -42,7 +45,7 @@ class Controle:
                     self.tela.mostra_selBot(values['listaBots'][0])
                 except:
                     pass
-            
+
             elif event == 'Conversar':
                 if len(values['listaBots']) != 0:
                     bot_escolhido = None
@@ -54,11 +57,11 @@ class Controle:
                 else:
                     self.tela.mostra_selBot("Nenhum bot selecionado")
 
-    ## conversa com o bot
+    # conversa com o bot
     def interface_bot(self, bot):
         self.tela = BotView(self, bot)
 
-        ## loop de eventos
+        # loop de eventos
         rodando = True
         while rodando:
             event, values = self.tela.le_eventos()
@@ -70,13 +73,12 @@ class Controle:
             elif event == 'Voltar':
                 self.tela.fim()
                 self.interface_menu()
-            
+
             elif event == "Enviar":
                 if values["pergunta"] == '':
-                    sg.PopupError(f"Por favor, escolha uma pergunta!", title=f"Erro!")
-                
+                    sg.PopupError(
+                        f"Por favor, escolha uma pergunta!", title=f"Erro!")
+
                 else:
-                    self.tela.window['resposta'].update(bot.get_resposta(values["pergunta"]))
-            
-            
-        
+                    self.tela.window['resposta'].update(
+                        bot.get_resposta(values["pergunta"]))

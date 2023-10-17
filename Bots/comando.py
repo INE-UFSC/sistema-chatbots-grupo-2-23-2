@@ -3,10 +3,10 @@ class Comando:
         self.__pergunta = pergunta
         self.__resposta = resposta
 
-    @property 
+    @property
     def pergunta(self):
         return self.__pergunta
-    
+
     @pergunta.setter
     def pergunta(self, pergunta):
         self.__pergunta = pergunta
@@ -14,7 +14,7 @@ class Comando:
     @property
     def resposta(self):
         return self.__resposta
-    
+
     @resposta.setter
     def resposta(self, resposta):
         self.__resposta = resposta
