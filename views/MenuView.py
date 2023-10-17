@@ -38,7 +38,7 @@ class MenuView:
             [sg.Text("Selecione com qual bot deseja conversar: "), sg.Listbox(self.getListaBotsNome(), size=(
                 20, 4), font=('Arial Bold', 14), expand_y=True, enable_events=True, key='listaBots')],
             [sg.Text("Bot selecionado: "), sg.Text(key="selBot")],
-            [sg.Button('Conversar')]
+            [sg.Button('Conversar'), sg.Button('Adicionar Bot'), sg.Button('Modificar Bot')]
         ]
 
         return sg.Window("Menu", self.__container, font=('Arial', 14))

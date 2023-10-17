@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 from SistemaChatBot.SistemaChatBot import SistemaChatBot
 from views.MenuView import MenuView
 from views.BotView import BotView
+from views.AddBotView import AddBotView
 
 
 class Controle:
@@ -57,6 +58,10 @@ class Controle:
                     self.tela.mostra_selBot("Nenhum bot selecionado")
                     sg.PopupError(
                         f"Selecione algum bot.", title=f"Erro",font=('Arial', 14))
+                    
+            elif event == 'Adicionar Bot':
+                self.tela.fim()
+                self.adicionar_Bot()
 
     # conversa com o bot
     def interface_bot(self, bot):
@@ -85,3 +90,20 @@ class Controle:
 
                 else:
                     self.tela.window['resposta'].update(bot.get_resposta(values["pergunta"]))
+
+    def adicionar_Bot(self):
+        self.tela = AddBotView(self)
+        rodando = True
+        while rodando:
+            event, values = self.tela.le_eventos()
+            if event == sg.WIN_CLOSED:
+                rodando = False
+                self.tela.fim()
+                break
+            elif event == 'Voltar':
+                self.tela.fim()
+                self.interface_menu()
+            elif event == 'Adicionar Bot':
+                
+
+            

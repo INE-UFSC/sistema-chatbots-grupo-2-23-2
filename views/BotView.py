@@ -44,6 +44,7 @@ class BotView:
 
         return sg.Window(f"Conversa com {self.bot.nome}", self.__container, font=('Arial', 14))
 
+    
     def le_eventos(self):
         return self.window.read()
 

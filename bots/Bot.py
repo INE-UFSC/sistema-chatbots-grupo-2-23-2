@@ -7,7 +7,7 @@ import random as r
 class Bot(ABC):
     def __init__(self, nome):
         self.__nome = nome
-        self.__comandos = ["abc"]
+        self.__comandos = []
 
     @property
     def nome(self):
