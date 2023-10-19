@@ -1,6 +1,8 @@
 from controle.controle import Controle
 
 
-# instanciacao e incio do controle
+# instanciacao do controlador
 controle = Controle()
+
+# inicio do controlador
 controle.inicio()
