@@ -6,7 +6,7 @@ from views.BotView import BotView
 
 class Controle:
     def __init__(self, bots):
-        self.__scb = SistemaChatBot(bots, 'bots.pkl')
+        self.__scb = SistemaChatBot()
         self.__tela = None
 
     # getters e setters
@@ -31,11 +31,9 @@ class Controle:
         self.__tela = MenuView(self)
 
         # loop de eventos
-        rodando = True
-        while rodando:
+        while True:
             event, values = self.tela.le_eventos()
             if event == sg.WIN_CLOSED:
-                rodando = False
                 self.tela.fim()
                 break
 
@@ -65,11 +63,9 @@ class Controle:
         self.tela = BotView(self, bot)
 
         # loop de eventos
-        rodando = True
-        while rodando:
+        while True:
             event, values = self.tela.le_eventos()
             if event == sg.WIN_CLOSED:
-                rodando = False
                 self.tela.fim()
                 break
 

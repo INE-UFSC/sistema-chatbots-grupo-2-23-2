@@ -1,10 +1,14 @@
+from bots.BotZangado import BotZangado
+from bots.BotTriste import BotTriste
+from bots.BotFeliz import BotFeliz
+from bots.BotGringo import BotGringo
 import pickle
 
 
 class SistemaChatBot:
-    def __init__(self, bots, arquivo):
-        self.__bots = bots
-        self.__arquivo = arquivo
+    def __init__(self):
+        self.__bots = [BotZangado("Yoda"), BotTriste("Bolado"), BotFeliz("Smiley"), BotGringo("Kevin")]
+        self.__arquivo = 'bots.pkl'
         try:
             self.__load()
         except FileNotFoundError:
