@@ -7,7 +7,10 @@ class MenuView:
         self.__controlador = controlador
         self.__container = None
         self.__bots = self.controlador.scb.bots
-        self.__window = self.tela_menu()
+        self.__janela = None
+
+        # gera-se a janela quando instanciado 
+        self.gerar_janela()
 
     # getters e setters
     @property
@@ -27,11 +30,15 @@ class MenuView:
         return self.__bots
 
     @property
-    def window(self):
-        return self.__window
+    def janela(self):
+        return self.__janela
+    
+    @janela.setter
+    def janela(self, janela):
+        self.__janela = janela
 
     # metodos
-    def tela_menu(self):
+    def gerar_janela(self):
 
         self.__container = [
             [sg.Text("Bem vindo(a) ao Chat Bots")],
@@ -41,7 +48,8 @@ class MenuView:
             [sg.Button('Conversar')]
         ]
 
-        return sg.Window("Menu", self.__container, font=('Arial', 14))
+        self.janela = sg.Window("Menu", self.__container, font=('Arial', 14))
+        return self.janela
 
     def getListaBotsNome(self):
         nomes = []
@@ -50,10 +58,10 @@ class MenuView:
         return nomes
 
     def mostra_selBot(self, selBot):
-        self.window.Element('selBot').Update(selBot)
+        self.janela.Element('selBot').Update(selBot)
 
     def le_eventos(self):
-        return self.window.read()
+        return self.janela.read()
 
     def fim(self):
-        self.window.close()
+        self.janela.close()
